@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>اختبار تحديد المستوى في الإنجليزية | Graines de Palestine</title>
+<style>
+:root{--g:#0d3b2b;--leaf:#24734e;--bg:#f2f5f1;--line:#cbd8ce;--muted:#52665b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#17251e;font-family:Tahoma,Arial,sans-serif;line-height:1.75}
+main{max-width:760px;margin:28px auto;padding:18px}
+header{text-align:center;margin-bottom:20px}
+.logo{display:inline-flex;align-items:center;gap:12px;color:#111;font-weight:bold;font-size:28px;direction:ltr;line-height:1.05}
+.mark{width:60px;height:60px;border:9px solid var(--g);border-top-color:#d51e4b;border-radius:50%;position:relative}
+.mark:before,.mark:after{content:"";position:absolute;background:#198354;border-radius:100% 0 100% 0;width:22px;height:32px;top:-27px;left:0;transform:rotate(-42deg)}
+.mark:after{left:26px;top:-16px;transform:rotate(15deg);width:19px;height:26px}
+.brand{font-family:"Trebuchet MS",sans-serif;text-align:left}
+.intro{color:#45584e;margin:22px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:26px;margin:18px 0}
+h1{font-size:24px;color:var(--g);margin:0 0 12px}
+h2{font-size:20px;color:var(--g)}
+label{display:block;font-weight:bold;color:var(--leaf);margin:15px 0 6px}
+input[type=text],input[type=email],select{width:100%;padding:14px;border:1px solid var(--line);border-radius:9px;background:#fafbf9;font:inherit}
+.check{display:flex;align-items:flex-start;gap:8px;margin:12px 0;color:var(--muted);font-weight:normal}
+button{border:0;border-radius:9px;background:var(--g);color:#fff;padding:13px 22px;font:bold 16px Tahoma;cursor:pointer}
+button.secondary{background:#e8efe9;color:var(--g);border:1px solid var(--line)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.progress{height:8px;background:#e5ece6;border-radius:8px;overflow:hidden;margin:12px 0}
+.progress span{display:block;height:100%;background:#258254;width:0}
+.qtop{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-weight:bold}
+#timer{color:#b42335;font-size:19px;font-weight:bold}
+.question{font-size:21px;font-weight:bold;margin:22px 0;direction:ltr;text-align:left}
+.option{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:9px;padding:13px;margin:10px 0;direction:ltr;text-align:left;cursor:pointer}
+.option:has(input:checked){border-color:var(--leaf);background:#eff7f1}
+.option input{accent-color:var(--g);width:18px;height:18px}
+.hidden{display:none!important}
+.score{font-size:34px;color:var(--g);font-weight:bold;text-align:center}
+.level{text-align:center;background:#eff6f0;border-radius:10px;padding:15px;font-size:22px;font-weight:bold;color:var(--g)}
+table{width:100%;border-collapse:collapse;margin-top:16px}
+td,th{border-bottom:1px solid #e3eae4;padding:9px;text-align:right}
+.small{font-size:13px;color:var(--muted)}
+.feedback{direction:ltr;text-align:left;padding:12px;border-radius:8px;margin:10px 0;background:#f7f9f7}
+.good{color:#197347}.bad{color:#b42335}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:20px}
+@media(max-width:600px){main{padding:10px}.card{padding:18px}.logo{font-size:23px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="logo"><div class="mark"></div><div class="brand">Graines de<br>Palestine</div></div>
+</header>
+
+<section id="welcome">
+<div class="intro">
+<p>يساعدكم هذا الاختبار السريع، الذي يستغرق <b>20 إلى 25 دقيقة</b>، بمعدل دقيقة واحدة لكل سؤال، على معرفة مستواكم في اللغة الإنجليزية. أجيبوا بعفوية!</p>
+<p><b>تنبيه:</b> تُحتسب المحاولة الأولى فقط. لا تغلقوا الصفحة قبل إنهاء الاختبار.</p>
+<p><b>ملاحظة تقنية:</b> لكي يعمل الاختبار بشكل صحيح، يجب أن تبقى هذه الصفحة مفتوحة حتى نهايته. إن فتح علامة تبويب جديدة أو مغادرة الصفحة ثم العودة إليها يجعل الاختبار غير صالح. هذا مجرد قيد تقني، لذا يُرجى تخصيص وقت كافٍ وإكمال الاختبار دفعة واحدة.</p>
+</div>
+
+<div class="card">
+<h1>معلوماتكم</h1>
+<label for="first">الاسم الأول</label>
+<input id="first" type="text" placeholder="اسمكم الأول">
+
+<label for="family">اسم العائلة</label>
+<input id="family" type="text" placeholder="اسم عائلتكم">
+
+<label for="group">مجموعة اللغة الإنجليزية</label>
+<select id="group">
+<option value="">اختاروا مجموعتكم</option>
+<option>Groupe 1</option>
+<option>Groupe 2</option>
+<option>Groupe 3</option>
+<option>Autre / غير ذلك</option>
+</select>
+
+<label for="email">البريد الإلكتروني</label>
+<input id="email" type="email" placeholder="name@email.com">
+
+<label class="check">
+<input type="checkbox" id="consent">
+أوافق على استخدام بياناتي لتسجيل نتيجة الاختبار والتواصل معي بشأنها.
+</label>
+
+<label class="check">
+<input type="checkbox" id="rules">
+أفهم أن عليّ إكمال الاختبار في محاولة واحدة.
+</label>
+
+<div class="actions">
+<button id="start" disabled>ابدؤوا الاختبار ◀</button>
+</div>
+</div>
+</section>
+
+<section id="quiz" class="hidden">
+<div class="card">
+<div class="qtop">
+<span id="counter">السؤال 1 من 25</span>
+<span id="tier">A1</span>
+<span id="timer">01:00</span>
+</div>
+<div class="progress"><span id="bar"></span></div>
+<div id="qtext" class="question"></div>
+<div id="options"></div>
+<div class="actions">
+<button id="next" disabled>السؤال التالي</button>
+</div>
+</div>
+</section>
+
+<section id="result" class="hidden">
+<div class="card">
+<h1>نتيجة الاختبار</h1>
+<div id="student"></div>
+<div class="score" id="score"></div>
+<div class="level" id="level"></div>
+<p id="description"></p>
+
+<h2>تفصيل النتائج حسب المستوى</h2>
+<table>
+<thead><tr><th>المستوى</th><th>النتيجة</th><th>الحالة</th></tr></thead>
+<tbody id="breakdown"></tbody>
+</table>
+
+<h2>تصحيح الإجابات</h2>
+<div id="corrections"></div>
+
+<p class="small">هذا اختبار تمهيدي يعتمد على القواعد والمفردات فقط، ولا يقيس مهارات الاستماع أو التحدث أو الكتابة.</p>
+
+<div class="actions">
+<button id="download">تحميل النتيجة</button>
+<button class="secondary" onclick="window.print()">طباعة النتيجة</button>
+</div>
+</div>
+</section>
+
+<footer>Graines de Palestine · English Placement Test A1–C1</footer>
+</main>
+
+<script>
+const Q=[
+["A1","What's your name?",["Who's","What's","How is","What are"],1],
+["A1","She ___ a teacher.",["Are","Is","Am","Be"],1],
+["A1","I ___ to school every day.",["Goes","Go","Going","Went"],1],
+["A1","My mother's sister is my ___.",["Uncle","Aunt","Cousin","Daughter"],1],
+["A1","There ___ two books on the table.",["Is","Are","Am","Be"],1],
+
+["A2","There isn't ___ milk in the fridge.",["Some","Any","Many","A few"],1],
+["A2","What did you ___ last weekend?",["Done","Doing","Did","Do"],3],
+["A2","London is ___ than Paris.",["More big","Biggest","Bigger","Most big"],2],
+["A2","I'm going to the ___ to buy some bread.",["Library","Bank","Bakery","Post office"],2],
+["A2","We ___ dinner when the phone rang.",["Have","Had","Were having","Are having"],2],
+
+["B1","I ___ already ___ that film.",["Did / see","Have / seen","Was / seeing","Has / saw"],1],
+["B1","She ___ here since 2018.",["Works","Worked","Has been working","Is work"],2],
+["B1","If it ___ tomorrow, we'll cancel the picnic.",["Will rain","Rains","Rained","Would rain"],1],
+["B1","I wish I ___ more time to travel.",["Have","Had","Would have","Will have"],1],
+["B1","Can you ___ me some money until Friday?",["Borrow","Owe","Rent","Lend"],3],
+
+["B2","The report ___ before the deadline.",["Has completed","Was completing","Had been completed","Was been completed"],2],
+["B2","Despite ___ hard, she didn't get the promotion.",["Working","She worked","Having work","To work"],0],
+["B2","She ___ the presentation by the time the CEO arrives.",["Will finish","Will have finished","Is finishing","Has finished"],1],
+["B2","Not only ___ the exam, but she also got the highest score.",["She passed","Did she pass","She did pass","Passed"],1],
+["B2","The company had to ___ 50 employees because of falling sales.",["Lay off","Put off","Take off","Get off"],0],
+
+["C1","Had I known about the delay, I ___ earlier.",["Will leave","Would have left","Would leave","Had left"],1],
+["C1","Hardly ___ the station when the train left.",["I had reached","Did I reach","Had I reached","I reached"],2],
+["C1","Her argument was so ___ that nobody could challenge it.",["Compelling","Feeble","Trivial","Reluctant"],0],
+["C1","Were it not for your help, we ___ the project.",["Won't finish","Wouldn't have finished","Hadn't finished","Didn't finish"],1],
+["C1","The new policy is intended to ___ the effects of inflation.",["Mitigate","Aggravate","Conceal","Discard"],0]
+];
+
+const names={
+A1:"مبتدئ (A1)",
+A2:"أساسي (A2)",
+B1:"متوسط (B1)",
+B2:"فوق المتوسط (B2)",
+C1:"متقدم (C1)"
+};
+
+const desc={
+A1:"يمكنكم فهم واستخدام تعبيرات يومية بسيطة.",
+A2:"يمكنكم التواصل في المواقف اليومية المألوفة.",
+B1:"يمكنكم فهم النقاط الرئيسية والتواصل في مواقف مألوفة.",
+B2:"يمكنكم فهم نصوص وأفكار معقدة والتواصل بطلاقة جيدة.",
+C1:"يمكنكم استخدام اللغة بمرونة ودقة في معظم السياقات."
+};
+
+let idx=0;
+let answers=Array(Q.length).fill(null);
+let secondsLeft=60;
+let timerId=null;
+
+const $=id=>document.getElementById(id);
+
+function validate(){
+$("start").disabled=!(
+$("first").value.trim() &&
+$("family").value.trim() &&
+$("group").value &&
+$("consent").checked &&
+$("rules").checked
+);
+}
+
+["first","family","group","consent","rules"].forEach(id=>{
+$(id).addEventListener("input",validate);
+$(id).addEventListener("change",validate);
+});
+
+$("start").onclick=()=>{
+$("welcome").classList.add("hidden");
+$("quiz").classList.remove("hidden");
+render();
+};
+
+function stopTimer(){
+if(timerId!==null){
+clearInterval(timerId);
+timerId=null;
+}
+}
+
+function startTimer(){
+stopTimer();
+secondsLeft=60;
+updateTimer();
+
+timerId=setInterval(()=>{
+secondsLeft--;
+updateTimer();
+
+if(secondsLeft<=0){
+stopTimer();
+if(idx<Q.length-1){
+idx++;
+render();
+}else{
+finish();
+}
+}
+},1000);
+}
+
+function updateTimer(){
+$("timer").textContent=
+String(Math.floor(secondsLeft/60)).padStart(2,"0")+":"+
+String(secondsLeft%60).padStart(2,"0");
+}
+
+function render(){
+const q=Q[idx];
+
+$("counter").textContent=`السؤال ${idx+1} من ${Q.length}`;
+$("tier").textContent=q[0];
+$("bar").style.width=((idx+1)/Q.length*100)+"%";
+$("qtext").textContent=q[1];
+$("options").innerHTML="";
+
+q[2].forEach((v,i)=>{
+const lab=document.createElement("label");
+lab.className="option";
+lab.innerHTML=`<input type="radio" name="answer" value="${i}"><span>${String.fromCharCode(65+i)}. ${v}</span>`;
+
+lab.querySelector("input").onchange=()=>{
+$("next").disabled=false;
+};
+
+$("options").appendChild(lab);
+});
+
+$("next").textContent=idx===Q.length-1?
+"إنهاء الاختبار وعرض النتيجة":
+"السؤال التالي";
+
+$("next").disabled=true;
+startTimer();
+}
+
+$("next").onclick=()=>{
+const chosen=document.querySelector('input[name="answer"]:checked');
+if(!chosen)return;
+
+answers[idx]=Number(chosen.value);
+idx++;
+
+if(idx<Q.length){
+render();
+}else{
+finish();
+}
+};
+
+function finish(){
+stopTimer();
+
+$("quiz").classList.add("hidden");
+$("result").classList.remove("hidden");
+
+const scores={A1:0,A2:0,B1:0,B2:0,C1:0};
+let total=0;
+
+Q.forEach((q,i)=>{
+if(answers[i]===q[3]){
+scores[q[0]]++;
+total++;
+}
+});
+
+let level="Pré-A1";
+
+for(const l of ["A1","A2","B1","B2","C1"]){
+if(scores[l]>=3)level=l;
+else break;
+}
+
+$("student").textContent=
+`${$("first").value} ${$("family").value} · ${$("group").value}`;
+
+$("score").textContent=
+`${total} / 25 · ${Math.round(total/25*100)}%`;
+
+$("level").textContent=
+`المستوى المقترح: ${names[level]||"قبل A1"} — ${level}`;
+
+$("description").textContent=
+desc[level]||"ينبغي تعزيز أساسيات اللغة الإنجليزية قبل الانتقال إلى A1.";
+
+$("breakdown").innerHTML=
+["A1","A2","B1","B2","C1"].map(l=>
+`<tr><td>${l}</td><td>${scores[l]} / 5</td><td>${scores[l]>=3?"مُتحقق":"غير مُتحقق"}</td></tr>`
+).join("");
+
+$("corrections").innerHTML=
+Q.map((q,i)=>
+`<div class="feedback">
+<b>${i+1}. ${q[1]}</b><br>
+<span class="${answers[i]===q[3]?"good":"bad"}">
+${answers[i]===q[3]?"✓ صحيح":"✗ إجابة غير صحيحة"}
+</span>
+· الإجابة الصحيحة: <b>${q[2][q[3]]}</b>
+${answers[i]!==q[3]?" · إجابتكم: "+(answers[i]===null?"لم تتم الإجابة":q[2][answers[i]]):""}
+</div>`
+).join("");
+
+const report=
+`Graines de Palestine - English Placement Test
+Student: ${$("first").value} ${$("family").value}
+Email: ${$("email").value}
+Group: ${$("group").value}
+Score: ${total}/25 (${Math.round(total/25*100)}%)
+Suggested level: ${level}
+`+Object.keys(scores).map(l=>`${l}: ${scores[l]}/5`).join("\n");
+
+$("download").onclick=()=>{
+const blob=new Blob([report],{type:"text/plain;charset=utf-8"});
+const a=document.createElement("a");
+a.href=URL.createObjectURL(blob);
+a.download="resultat-test-anglais.txt";
+a.click();
+URL.revokeObjectURL(a.href);
+};
+}
+</script>
+</body>
+</html>
